@@ -1,0 +1,11 @@
+.spec.selected {
+  /* background-color: green; */
+}
+
+.klass-container {
+  background: #efeeee;
+}
+
+.klass.selected {
+  background: grey;
+}

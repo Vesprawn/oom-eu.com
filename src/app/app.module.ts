@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +13,8 @@ import { FaqComponent } from './faq/faq.component';
 import { RulesComponent } from './rules/rules.component';
 import { JoinComponent } from './join/join.component';
 import { MembersComponent } from './members/members.component';
+import { MemberService } from './member.service';
+import { CharacterclassService } from './characterclass.service';
 
 
 @NgModule({
@@ -26,9 +30,14 @@ import { MembersComponent } from './members/members.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    MemberService,
+    CharacterclassService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
