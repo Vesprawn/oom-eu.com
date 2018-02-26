@@ -10,7 +10,8 @@ export class MemberService {
   constructor(private http: HttpClient) { }
 
   getMembers(): Observable<Member[]> {
-    return this.http.get<Member[]>('http://localhost:1337/members');
+    // return this.http.get<Member[]>('http://localhost:1337/members');
+    return this.http.get<Member[]>('http://mikemalcolm.co.uk:1337/members')
   }
 
   // getMembers() {
