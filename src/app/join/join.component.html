@@ -1,0 +1,177 @@
+<!-- Button trigger modal -->
+  <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-rules></app-rules>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<h3>Join Out of Mana</h3>
+<p>Please read our <span class="text-primary" data-toggle="modal" data-target="#myModal">rules</span> before applying.</p>
+
+
+
+<div class="form">
+  <h4>About You</h4>
+
+  <div class="row">
+    <div class="col-sm-10">
+        Social <span class="mx-2" (click)="toggleRaider()">
+          <span [class.hidden]="!user.raider"><i class="fas fa-toggle-on" ></i></span>
+          <span [class.hidden]="user.raider"><i class="fas fa-toggle-off"></i></span>
+        </span>  Raider
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="nickname" class="col-sm-2 col-form-label">Nickname:</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="user.username" placeholder ="e.g. Peon" id="nickname" class="form-control" type="text">
+      <!-- <input type="text" class="form-control" id="nickname" placeholder='e.g. Peon' name="nickname" [(ngModel)]="nickname"> -->
+      <!-- <small id="emailHelp" class="form-text text-muted">What wo?</small> -->
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <label for="birthDate" class="col-sm-2 col-form-label">Date of Birth:
+      </label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="user.birthDate" placeholder ="DD/MM/YY" id="birthDate" class="form-control" type="text">
+        <small class="form-text text-muted text-right">optional</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="location" class="col-sm-2 col-form-label">Where you from?
+        </label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="user.location" placeholder ="e.g. Azeroth" id="location" class="form-control" type="text">
+          <small class="form-text text-muted text-right">optional</small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="referralCode" class="col-sm-2 col-form-label">Referral Code:
+        </label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="referralCode" placeholder ="e.g. PRWN01" id="referralCode" class="form-control" type="text">
+          <small class="form-text text-muted text-right">optional</small>
+        </div>
+      </div>
+
+        
+      <div class="form-group row" *ngIf="!referralCode">
+          <label for="howFound" class="col-sm-2 col-form-label">How did you hear about us?
+          </label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="howFound" placeholder ="e.g. Guild Finder" id="howFound" class="form-control" type="text">
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="aboutYou">About you</label>
+            <textarea [(ngModel)]="aboutYou" class="form-control" id="aboutYou" rows="3" placeholder="Tell us a little about you."></textarea>
+          </div>
+
+
+        <div class="form-group">
+            <label for="guildHistory">Why do you want to join OOM?</label>
+            <textarea [(ngModel)]="reasonForJoining" class="form-control" id="reasonForJoining" rows="3" placeholder="e.g. Want to raid."></textarea>
+          </div>
+
+          <div class="form-group">
+              <label for="guildHistory">What to you bring to OOM?</label>
+              <textarea [(ngModel)]="valueToOOM" class="form-control" id="valueToOOM" rows="3" placeholder="e.g. iLvl > 9000."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="guildHistory">Questions for Us?</label>
+                <textarea [(ngModel)]="applicantQuestions" class="form-control" id="applicantQuestions" rows="3" placeholder="e.g. When can I join?"></textarea>
+              </div>
+
+        <div class="form-group">
+          <label for="guildHistory">Guild History inlcuding reasons for leaving</label>
+          <textarea [(ngModel)]="guildHistory" class="form-control" id="guildHistory" rows="3" placeholder="e.g. Too much mana."></textarea>
+        </div>
+
+
+        <h4>Character Details</h4>
+        <!-- <div class="row">
+            <div class="col-sm-10">
+                Emerald Dream <span class="mx-2" (click)="toggleRealm()"><span [class.hidden]="!emeraldDream"><i class="fas fa-toggle-on" ></i></span><span [class.hidden]="emeraldDream"><i class="fas fa-toggle-off"></i></span></span>  Teranes
+            </div>
+          </div> -->
+
+          <div class="row">
+              <div class="col-sm-10">
+                  Emerald Dream <span class="mx-2" (click)="toggleRealm()">
+                    <span [class.hidden]="emeraldDream"><i class="fas fa-toggle-on" ></i></span>
+                    <span [class.hidden]="!emeraldDream"><i class="fas fa-toggle-off"></i></span>
+                  </span>  Teranes
+              </div>
+            </div>
+        <div class="form-group row">
+    <label for="characterName" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="character.name" placeholder ="e.g. Peon" id="characterName" class="form-control" type="text">
+    </div>
+  </div>
+
+  <div class="row klass-container mb-2">
+    <div class="col-sm-6 col-md-4 klass" *ngFor="let characterClass of characterClasses" [ngClass]="{'selected': characterClass.selected}">
+      <div class="row">
+        <div class="col-sm-12" (click)="clickClass(characterClass)">
+            {{characterClass.name}}
+        </div>
+      </div>
+      
+      <div class="row spec" *ngFor="let spec of characterClass.specs" [ngClass]="{'hidden': !characterClass.selected, 'selected': spec.selected}">
+          <div class="col-sm-12" (click)="clickSpec(spec)">
+              {{spec.name}} <span [ngClass]="{'hidden': !spec.selected}"><i class="fas fa-check" ></i></span>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <label for="armouryLink" class="col-sm-2 col-form-label">Armoury Link:
+      </label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="armouryLink" placeholder ="https://worldofwarcraft.com/en-gb/search?q=[charactername]" id="armouryLink" class="form-control" type="text">
+      </div>
+    </div>
+</div>
+
+
+<!-- <div *ngIf="user.raider">
+    <h4>Raid History</h4>
+    <p>Don't worry we accept new raiders too.</p>
+    
+    Legion
+                          LFR  Normal Heroic Mythic
+    Emerald Nightmare
+    Trial of Valor
+    Nighthold
+    Tomb of Sargeras
+    Antorus, The Burning Throne
+</div> -->
+
+
+Do you accept our <span class="text-primary" data-toggle="modal" data-target="#myModal">rules</span>?<br>
+<div class="row justify-content-md-center">
+    <div class="btn btn-primary" (click)="apply()">Join</div>
+</div>

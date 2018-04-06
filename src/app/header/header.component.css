@@ -1,0 +1,14 @@
+.header {
+  box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.75);
+  /* background-color: white; */
+  /* color: white; */
+}
+
+.btn:hover {
+  /* color: #7f4628; */
+  color: #00b0ff;
+}
+
+.header a {
+  /* color: black; */
+}

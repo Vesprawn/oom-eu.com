@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+/* body {
+  background-color: #492d21;
+}
+
+.section {
+  background-color: #7f4628;
+}
+
+.section .article {
+  background-color: #a8aaa4;
+}
+
+.discord {
+  background-color:#7289DA;
+} */
+
+.discord {
+  /* background-color: white; */
+  /* width: 2em; */
+}
+/* 
+.discord img {
+  width: 100%;
+} */
+
+body {
+  /* background-color: #121212; */
+  /* color: white; */
+}
+
+  .main {
+    /* background-color: #121212; */
+    box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.75);
+  }
+
+  body {
+    background-color: #8c89a6;
+    /* background-size: 100%; */
+    background-image: url('/assets/backgrounds/suramar.jpg');
+    /* background-size:; */
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .hidden {
+    display: none;
+  }
