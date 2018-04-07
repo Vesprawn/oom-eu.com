@@ -1,3 +1,8 @@
+<!-- <div class="row">
+  <div class="col-sm-12">
+    <app-member-search></app-member-search>
+  </div>
+</div> -->
 <table class="table">
   <thead>
     <tr>
@@ -9,7 +14,10 @@
   <tbody>
     <tr *ngFor="let member of members">
       <td>{{member.name}}</td>
-      <td>{{member.className}}</td>
+      <td>
+          <app-classicon [classIcon]=member.classIcon></app-classicon>
+          {{member.className}}
+      </td>
       <td>{{member.rankName}}</td>
     </tr>
   </tbody>

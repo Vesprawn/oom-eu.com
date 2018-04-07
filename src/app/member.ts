@@ -6,6 +6,7 @@ export class Member {
   realmName: string
   classId: number
   className: string
+  classIcon: string
   raceId: number
   raceName: string
 }

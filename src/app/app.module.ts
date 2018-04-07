@@ -14,9 +14,12 @@ import { RulesComponent } from './rules/rules.component';
 import { JoinComponent } from './join/join.component';
 import { MembersComponent } from './members/members.component';
 import { MemberService } from './member.service';
+import { MemberSearchService } from './member-search.service';
 import { JoinService } from './join.service';
 import { CharacterclassService } from './characterclass.service';
 import { ApplicationsComponent } from './applications/applications.component';
+import { ClassiconComponent } from './classicon/classicon.component';
+import { MemberSearchComponent } from './member-search/member-search.component';
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { ApplicationsComponent } from './applications/applications.component';
     RulesComponent,
     JoinComponent,
     MembersComponent,
-    ApplicationsComponent
+    ApplicationsComponent,
+    ClassiconComponent,
+    MemberSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import { ApplicationsComponent } from './applications/applications.component';
   providers: [
     JoinService,
     MemberService,
+    MemberSearchService,
     CharacterclassService
   ],
   bootstrap: [AppComponent]

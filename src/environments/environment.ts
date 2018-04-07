@@ -6,6 +6,20 @@
 export const environment = {
   production: false,
   restAPI: 'http://localhost:1337',
+  ClassIcon: {
+    Druid: 'classicon_druid.jpg',
+    DeathKnight: 'classicon_deathknight.jpg',
+    DemonHunter: 'classicon_demonhunter.jpg',
+    Hunter: 'classicon_hunter.jpg',
+    Mage: 'classicon_mage.jpg',
+    Monk: 'classicon_monk.jpg',
+    Paladin: 'classicon_paladin.jpg',
+    Priest: 'classicon_priest.jpg',
+    Rogue: 'classicon_rogue.jpg',
+    Shaman: 'classicon_shaman.jpg',
+    Warlock: 'classicon_warlock.jpg',
+    Warrior: 'classicon_warrior.jpg'
+  },
   Ranks: [
     {
       id: 0,

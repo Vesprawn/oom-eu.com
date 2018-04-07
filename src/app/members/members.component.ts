@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../member.service';
+import { MemberSearchService } from '../member-search.service';
 import { CharacterclassService } from '../characterclass.service';
 import { Member } from '../member';
 import { environment } from '../../environments/environment';
@@ -12,10 +13,26 @@ import { environment } from '../../environments/environment';
 export class MembersComponent implements OnInit {
   members: Member[];
 
-  constructor(private memberService: MemberService, private classService: CharacterclassService) { }
+  constructor(private memberSearchService: MemberSearchService, private memberService: MemberService, private classService: CharacterclassService) { }
 
   ngOnInit() {
     this.getMembers();
+  }
+
+  searchMembers (event: any) {
+    // this.memberSearchService.searchMembers()
+    // let search = event.target.value.toLowerCase()
+    // console.log search
+    // let results = this.members.filter((member) => {
+    //   search = search.toLowerCase()
+    //   let name = member.name.toLowerCase()
+
+    //   if (name.includes(search)) {
+    //     return true
+    //   }
+    // })
+
+    // console.log(results)
   }
 
   getMembers(): void {
@@ -33,6 +50,8 @@ export class MembersComponent implements OnInit {
           })
 
           member.className = klass[0].name
+          member.classIcon = member.className.split(' ').join('').toLowerCase()
+          // console.log(member.className.split(' ').join('').toLowerCase())
           member.rankName = rank[0].name
         })
       })
