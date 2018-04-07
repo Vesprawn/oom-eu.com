@@ -1,27 +1,30 @@
 <!-- Button trigger modal -->
   <!-- Modal -->
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <app-rules></app-rules>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <app-rules></app-rules>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
 
-<h3>Join Out of Mana</h3>
+  <div *ngIf="applying; else elseBlock">
+    Applying one moment.
+  </div>
+  <ng-template #elseBlock>
+    <h3>Join Out of Mana</h3>
 <p>Please read our <span class="text-primary" data-toggle="modal" data-target="#myModal">rules</span> before applying.</p>
 
 
@@ -175,3 +178,6 @@ Do you accept our <span class="text-primary" data-toggle="modal" data-target="#m
 <div class="row justify-content-md-center">
     <div class="btn btn-primary" (click)="apply()">Join</div>
 </div>
+  </ng-template>
+
+

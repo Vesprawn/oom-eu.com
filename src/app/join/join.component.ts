@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { Character } from '../character';
 import { CharacterclassService } from '../characterclass.service';
+import { JoinService } from '../join.service';
+import { GuildApplication } from '../guildapplication';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-join',
@@ -9,13 +12,7 @@ import { CharacterclassService } from '../characterclass.service';
   styleUrls: ['./join.component.css']
 })
 export class JoinComponent implements OnInit {
-  user: User = {
-    username: '',
-    birthDate: '',
-    location: '',
-    raider: true
-  };
-
+  applying: boolean = false
   character: Character = {
     name: '',
     realm: 'Emerald Dream',
@@ -23,6 +20,35 @@ export class JoinComponent implements OnInit {
     specs: [],
     armouryLink: ''
   };
+
+  guildApplication: GuildApplication = {
+    id: 0,
+    username: '',
+    type: '',
+    birthDate: '',
+    location: '',
+    referalCode: '',
+    joinReason: '',
+    valueToOOM: '',
+    howFound: '',
+    guildHistory: '',
+    questionsOOM: '',
+    about: '',
+    character: this.character,
+    status: '',
+    applied: '',
+    updated: '',
+    updatedBy: ''
+  }
+
+  user: User = {
+    username: '',
+    birthDate: '',
+    location: '',
+    raider: true
+  };
+
+  
 
   // raider = true;
   armouryLink = '';
@@ -38,7 +64,7 @@ export class JoinComponent implements OnInit {
   characterClass = ''
   specs = []
 
-  constructor(private classService: CharacterclassService) { }
+  constructor(private joinService: JoinService, private classService: CharacterclassService, private router: Router) { }
 
   ngOnInit() {
     this.getClasses()
@@ -68,7 +94,7 @@ export class JoinComponent implements OnInit {
   }
 
   getClasses () {
-    this.characterClasses = this.classService.getClasses()
+    // this.characterClasses = this.classService.getClasses()
   }
 
   clickSpec (spec) {
@@ -81,28 +107,34 @@ export class JoinComponent implements OnInit {
   }
 
   apply () {
-    let application = {
-      type: (this.user.raider) ? 'Raider' : 'Social',
-      name: this.user.username,
-      birthDate: this.user.birthDate,
-      location: this.user.location,
-      referalCode: this.referralCode,
-      joinReason: this.reasonForJoining,
-      valueToOOM: this.valueToOOM,
-      howFound: this.howFound,
-      guildHistory: this.guildHistory,
-      applicantQuestions: this.applicantQuestions,
-      aboutYou: this.aboutYou,
-      character: {
-        name: this.character.name,
-        realm: (this.emeraldDream) ? 'Emerald Dream' : 'Teranes',
-        _class: this.characterClass,
-        specs: this.specs,
-        armouryLink: this.armouryLink
-      }
+    this.applying = true
+    this.guildApplication.username = this.user.username
+    this.guildApplication.type = (this.user.raider) ? 'Raider' : 'Social'
+    this.guildApplication.birthDate = this.user.birthDate
+    this.guildApplication.location = this.user.location
+    this.guildApplication.referalCode = this.referralCode
+    this.guildApplication.joinReason = this.reasonForJoining
+    this.guildApplication.valueToOOM = this.valueToOOM
+    this.guildApplication.howFound = this.howFound
+    this.guildApplication.guildHistory = this.guildHistory
+    this.guildApplication.questionsOOM = this.applicantQuestions
+    this.guildApplication.about = this.aboutYou
+    this.guildApplication.character = {
+      name: this.character.name,
+      realm: (this.emeraldDream) ? 'Emerald Dream' : 'Teranes',
+      class: this.characterClass,
+      specs: this.specs,
+      armouryLink: this.armouryLink
     }
+   
 
-    console.log(application)
+
+
+
+    this.joinService.submitApplication(this.guildApplication).subscribe((res) => {
+      this.applying = false
+      this.router.navigateByUrl('/applications');
+    })
   }
 
   toggleRaider () {

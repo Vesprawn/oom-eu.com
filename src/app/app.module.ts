@@ -14,7 +14,9 @@ import { RulesComponent } from './rules/rules.component';
 import { JoinComponent } from './join/join.component';
 import { MembersComponent } from './members/members.component';
 import { MemberService } from './member.service';
+import { JoinService } from './join.service';
 import { CharacterclassService } from './characterclass.service';
+import { ApplicationsComponent } from './applications/applications.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { CharacterclassService } from './characterclass.service';
     FaqComponent,
     RulesComponent,
     JoinComponent,
-    MembersComponent
+    MembersComponent,
+    ApplicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { CharacterclassService } from './characterclass.service';
     FormsModule
   ],
   providers: [
+    JoinService,
     MemberService,
     CharacterclassService
   ],
