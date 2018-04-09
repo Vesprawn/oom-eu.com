@@ -50,6 +50,10 @@ export class MembersComponent implements OnInit {
           })
 
           member.className = klass[0].name
+          let realm = (member.realmId === 0) ? 'emerald-dream' : 'terenas'
+          console.log(member.realmId)
+          member.armouryLink = `https://worldofwarcraft.com/en-gb/character/${realm}/${member.name}`
+          // member.armouryLink = 'https://worldofwarcraft.com/en-gb/character/terenas/warprawn'
           member.classIcon = member.className.split(' ').join('').toLowerCase()
           // console.log(member.className.split(' ').join('').toLowerCase())
           member.rankName = rank[0].name

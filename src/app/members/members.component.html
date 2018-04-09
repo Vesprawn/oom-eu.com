@@ -13,7 +13,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let member of members">
-      <td>{{member.name}}</td>
+      <td><a href={{member.armouryLink}} target="_blank">{{member.name}}</a></td>
       <td>
           <app-classicon [classIcon]=member.classIcon></app-classicon>
           {{member.className}}

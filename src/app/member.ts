@@ -1,5 +1,6 @@
 export class Member {
   name: string
+  armouryLink: string
   rankId: number
   rankName: string
   realmId: number
