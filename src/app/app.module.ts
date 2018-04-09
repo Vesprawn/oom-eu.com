@@ -16,11 +16,11 @@ import { MembersComponent } from './members/members.component';
 import { MemberService } from './member.service';
 import { MemberSearchService } from './member-search.service';
 import { JoinService } from './join.service';
+import { AnalyticsService } from './analytics.service';
 import { CharacterclassService } from './characterclass.service';
 import { ApplicationsComponent } from './applications/applications.component';
 import { ClassiconComponent } from './classicon/classicon.component';
 import { MemberSearchComponent } from './member-search/member-search.component';
-
 
 @NgModule({
   declarations: [
@@ -46,8 +46,18 @@ import { MemberSearchComponent } from './member-search/member-search.component';
     JoinService,
     MemberService,
     MemberSearchService,
-    CharacterclassService
+    CharacterclassService,
+    AnalyticsService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor (private anaylticsService: AnalyticsService) {
+    console.log('loaded')
+
+    this.anaylticsService.update().subscribe((data) => {
+      console.log('success')
+    })
+  }
+
+ }
