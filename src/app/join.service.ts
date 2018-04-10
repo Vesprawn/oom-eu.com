@@ -53,6 +53,13 @@ export class JoinService {
     return this.http.get<GuildApplication[]>(`${environment.restAPI}/newApplications`)
   }
 
+  getApplication (id) {
+    console.log('test application')
+    console.log(id)
+
+    return this.http.get<GuildApplication>(`${environment.restAPI}/application/${id}`)
+  }
+
   // /** POST: add a new hero to the database */
   // submitApplication (guildApplication: GuildApplication): Observable<GuildApplication> {
   //   return this.http.post<GuildApplication>(`${environment.restAPI}/join`, guildApplication)

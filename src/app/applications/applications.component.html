@@ -7,7 +7,8 @@
   <div class="col-sm-12">
     <div class="row" *ngFor="let application of newApplications">
       <div class="col-sm-12">
-          {{application.username}}
+        <a [routerLink]="['/guildapplication', application.id]">{{application.username}} - {{application.type}} ({{application.status}})</a>
+          
       </div>
     </div>
   </div>

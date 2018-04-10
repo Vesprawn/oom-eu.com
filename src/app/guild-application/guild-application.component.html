@@ -1,0 +1,65 @@
+
+
+<div *ngIf="loading; else elseBlock">
+    Loading
+</div>
+
+<ng-template #elseBlock>
+  <div class="row">
+    <div class="col-sm-10">
+      <h5>{{guildApplication.username}} - {{guildApplication.type}}</h5>
+    </div>
+    <div class="col-sm-2">
+      Status: {{guildApplication.status}}
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12">
+        From: {{guildApplication.location}}
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="col-sm-12">
+        {{guildApplication.birthDate}}
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <h5>About</h5>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12">{{guildApplication.about}}</div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <h5>Guild History</h5>
+    </div>
+      <div class="col-sm-12">
+        {{guildApplication.guildHistory}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <h5>Why Join OoM?</h5>
+      </div>
+      <div class="col-sm-12">
+        {{guildApplication.joinReason}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <h5>Questions for OoM</h5>
+      </div>
+      <div class="col-sm-12">
+        {{guildApplication.questionsOOM}}
+      </div>
+    </div>
+</ng-template>
+

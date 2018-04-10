@@ -5,6 +5,7 @@ import { FaqComponent } from './faq/faq.component';
 import { RulesComponent } from './rules/rules.component';
 import { JoinComponent } from './join/join.component';
 import { MembersComponent } from './members/members.component';
+import { GuildApplicationComponent } from './guild-application/guild-application.component';
 import { ApplicationsComponent } from './applications/applications.component';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'join', component: JoinComponent },
   { path: 'members', component: MembersComponent },
-  { path: 'applications', component: ApplicationsComponent }
+  { path: 'applications', component: ApplicationsComponent },
+  { path: 'guildapplication/:id', component: GuildApplicationComponent }
 ];
 
 @NgModule({

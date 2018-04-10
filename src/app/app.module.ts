@@ -21,6 +21,7 @@ import { CharacterclassService } from './characterclass.service';
 import { ApplicationsComponent } from './applications/applications.component';
 import { ClassiconComponent } from './classicon/classicon.component';
 import { MemberSearchComponent } from './member-search/member-search.component';
+import { GuildApplicationComponent } from './guild-application/guild-application.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MemberSearchComponent } from './member-search/member-search.component';
     MembersComponent,
     ApplicationsComponent,
     ClassiconComponent,
-    MemberSearchComponent
+    MemberSearchComponent,
+    GuildApplicationComponent
   ],
   imports: [
     BrowserModule,
