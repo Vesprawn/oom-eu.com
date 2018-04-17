@@ -17,11 +17,14 @@ import { MemberService } from './member.service';
 import { MemberSearchService } from './member-search.service';
 import { JoinService } from './join.service';
 import { AnalyticsService } from './analytics.service';
+import { AuthenticationService } from './authentication.service';
 import { CharacterclassService } from './characterclass.service';
 import { ApplicationsComponent } from './applications/applications.component';
 import { ClassiconComponent } from './classicon/classicon.component';
 import { MemberSearchComponent } from './member-search/member-search.component';
 import { GuildApplicationComponent } from './guild-application/guild-application.component';
+import { LoginComponent } from './login/login.component';
+import { MaterializeModule } from "angular2-materialize";
 
 @NgModule({
   declarations: [
@@ -36,20 +39,23 @@ import { GuildApplicationComponent } from './guild-application/guild-application
     ApplicationsComponent,
     ClassiconComponent,
     MemberSearchComponent,
-    GuildApplicationComponent
+    GuildApplicationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule
+    // MaterializeModule
   ],
   providers: [
     JoinService,
     MemberService,
     MemberSearchService,
     CharacterclassService,
-    AnalyticsService
+    AnalyticsService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

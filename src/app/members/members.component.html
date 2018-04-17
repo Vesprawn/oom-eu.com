@@ -1,9 +1,49 @@
+<!-- <div class="parallax-container">
+    <div class="parallax"><img src="assets/img/suramar.jpg"></div>
+  </div> -->
+  <div class="section teal lighten-3">
+      <div class="container white">
+        <div class="row">
+          <div class="col s12">
+              <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Class</th>
+                      <th>Rank</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let member of members">
+                      <td><a href={{member.armouryLink}} target="_blank">{{member.name}}</a></td>
+                      <td>
+                          <app-classicon [classIcon]=member.classIcon></app-classicon>
+                          {{member.className}}
+                      </td>
+                      <td>{{member.rankName}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="assets/img/suramar.jpg"></div>
+  </div>
+  <!-- <div class="section deep-purple darken-3"> -->
+
+
+
+
+
+
 <!-- <div class="row">
   <div class="col-sm-12">
     <app-member-search></app-member-search>
   </div>
 </div> -->
-<table class="table">
+<!-- <table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -21,4 +61,4 @@
       <td>{{member.rankName}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->

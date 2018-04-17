@@ -7,6 +7,7 @@ import { JoinComponent } from './join/join.component';
 import { MembersComponent } from './members/members.component';
 import { GuildApplicationComponent } from './guild-application/guild-application.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'join', component: JoinComponent },
   { path: 'members', component: MembersComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'applications', component: ApplicationsComponent },
   { path: 'guildapplication/:id', component: GuildApplicationComponent }
 ];

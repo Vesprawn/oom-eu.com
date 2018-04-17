@@ -24,6 +24,10 @@
   width: 100%;
 } */
 
+.p-2 {
+  padding: 2em;
+}
+
 body {
   /* background-color: #121212; */
   /* color: white; */

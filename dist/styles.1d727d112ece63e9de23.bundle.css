@@ -19,7 +19,7 @@
 /* 
 .discord img {
   width: 100%;
-} */.main{
+} */.p-2{padding:2em}.main{
     /* background-color: #121212; */-webkit-box-shadow:0 0 18px 5px rgba(0,0,0,.75);box-shadow:0 0 18px 5px rgba(0,0,0,.75)}body{background-color:#8c89a6;
     /* background-size: 100%; */background-image:url(/assets/backgrounds/suramar.jpg);
     /* background-size:; */background-position:top;background-repeat:no-repeat}.hidden{display:none}
