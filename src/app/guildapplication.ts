@@ -18,4 +18,5 @@ export class GuildApplication {
   applied: string
   updated: string
   updatedBy: string
+  armoryLink: string
 }

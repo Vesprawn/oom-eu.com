@@ -39,7 +39,7 @@ body {
   }
 
   body {
-    background-color: #8c89a6;
+    /* background-color: #8c89a6; */
     /* background-size: 100%; */
     background-image: url('/assets/backgrounds/suramar.jpg');
     /* background-size:; */
@@ -49,4 +49,43 @@ body {
 
   .hidden {
     display: none;
+  }
+
+  /* label color */
+  .oom-form .input-field label {
+    color: #9e9e9e;
+  }
+  /* label focus color */
+  .oom-form .input-field input[type=text]:focus + label, .oom-form textarea.materialize-textarea:focus + label.active  {
+    color: #2196f3;
+  }
+  /* label underline focus color */
+  .oom-form  .input-field input[type=text]:focus, .oom-form textarea.materialize-textarea:focus {
+    border-bottom: 1px solid #2196f3;
+    box-shadow: 0 1px 0 0 #2196f3;
+  }
+  /* valid color */
+  .oom-form  .input-field input[type=text].valid {
+    border-bottom: 1px solid #9e9e9e;
+    box-shadow: 0 1px 0 0 #9e9e9e;
+  }
+  /* invalid color */
+  .oom-form .input-field input[type=text].invalid {
+    border-bottom: 1px solid #9e9e9e;
+    box-shadow: 0 1px 0 0 #9e9e9e;
+  }
+  /* icon prefix focus color */
+  .oom-form .input-field .prefix.active {
+    color: #9e9e9e;
+  }
+
+
+  /*sjhkdfgshjgdfds*/
+  .oom-btn {
+    cursor: pointer;
+  }
+
+  .oom-link {
+    color: #2196f3;
+    text-decoration: underline;
   }

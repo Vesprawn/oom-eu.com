@@ -25,6 +25,8 @@ import { MemberSearchComponent } from './member-search/member-search.component';
 import { GuildApplicationComponent } from './guild-application/guild-application.component';
 import { LoginComponent } from './login/login.component';
 import { MaterializeModule } from "angular2-materialize";
+import { ArmoryHelpComponent } from './armory-help/armory-help.component';
+import { RulesAndGuidelinesComponent } from './rules-and-guidelines/rules-and-guidelines.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { MaterializeModule } from "angular2-materialize";
     ClassiconComponent,
     MemberSearchComponent,
     GuildApplicationComponent,
-    LoginComponent
+    LoginComponent,
+    ArmoryHelpComponent,
+    RulesAndGuidelinesComponent
   ],
   imports: [
     BrowserModule,

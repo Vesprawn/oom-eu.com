@@ -6,6 +6,10 @@ import { JoinService } from '../join.service';
 import { GuildApplication } from '../guildapplication';
 import {Router} from '@angular/router';
 
+declare var $: any;
+
+/* global $ */
+
 @Component({
   selector: 'app-join',
   templateUrl: './join.component.html',
@@ -25,8 +29,8 @@ export class JoinComponent implements OnInit {
     id: 0,
     username: '',
     type: '',
-    birthDate: '',
-    location: '',
+    birthDate: '01/01/1900',
+    location: 'unknown',
     referalCode: '',
     joinReason: '',
     valueToOOM: '',
@@ -38,18 +42,19 @@ export class JoinComponent implements OnInit {
     status: '',
     applied: '',
     updated: '',
-    updatedBy: ''
+    updatedBy: '',
+    armoryLink: ''
   }
 
   user: User = {
     username: '',
-    birthDate: '',
-    location: '',
+    birthDate: '01/01/1900',
+    location: 'unknown',
     raider: true
   };
 
   
-
+  disableForm = true;
   // raider = true;
   armouryLink = '';
   referralCode = '';
@@ -68,6 +73,33 @@ export class JoinComponent implements OnInit {
 
   ngOnInit() {
     this.getClasses()
+
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+  }
+
+  modelChange () {
+    console.log('model changed')
+    // this.disableForm = false
+
+    this.validateForm()
+  }
+
+   validateForm () {
+     console.log('validate form')
+     console.log(this.armouryLink)
+    let disable = false
+    if (this.user.username === '' ||
+      this.aboutYou === '' ||
+    this.reasonForJoining === '' ||
+    this.valueToOOM === '' ||
+this.guildHistory === '' ||
+this.armouryLink === '') {
+      disable = true
+    }
+
+    this.disableForm = disable
   }
 
   deselectClasses () {
@@ -119,6 +151,7 @@ export class JoinComponent implements OnInit {
     this.guildApplication.guildHistory = this.guildHistory
     this.guildApplication.questionsOOM = this.applicantQuestions
     this.guildApplication.about = this.aboutYou
+    this.guildApplication.armoryLink = this.armouryLink
     this.guildApplication.character = {
       name: this.character.name,
       realm: (this.emeraldDream) ? 'Emerald Dream' : 'Teranes',

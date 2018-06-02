@@ -1,8 +1,8 @@
 <!-- <div class="parallax-container">
     <div class="parallax"><img src="assets/img/suramar.jpg"></div>
   </div> -->
-  <div class="section teal lighten-3">
-      <div class="container white">
+  <div class="section">
+      <div class="container">
         <div class="row">
           <div class="col s12">
               <table>
@@ -15,7 +15,7 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let member of members">
-                      <td><a href={{member.armouryLink}} target="_blank">{{member.name}}</a></td>
+                      <td><a href={{member.armouryLink}} class="oom-link" target="_blank">{{member.name}}</a></td>
                       <td>
                           <app-classicon [classIcon]=member.classIcon></app-classicon>
                           {{member.className}}
@@ -28,9 +28,9 @@
         </div>
       </div>
   </div>
-  <div class="parallax-container">
+  <!-- <div class="parallax-container">
     <div class="parallax"><img src="assets/img/suramar.jpg"></div>
-  </div>
+  </div> -->
   <!-- <div class="section deep-purple darken-3"> -->
 
 
