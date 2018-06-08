@@ -90,6 +90,125 @@ body {
     text-decoration: underline;
   }
 
+  .oom-scroll {
+    position: relative;
+    /* background: orange; */
+    background-image: url('/assets/scroll/scroll-body.png');
+    width: 60vw;
+    margin-left: 20vw;
+    margin-top: 10vh;
+    margin-bottom: 140px;
+  }
+
+  .oom-scroll-top, .oom-scroll-bottom {
+    height: 86px;
+    width: 100%;
+    /* background: yellow; */
+    position: relative;
+  }
+
+  .oom-scroll-bottom {
+    height: 110px;
+    position: absolute;
+    width: 100%;
+    bottom: -110px;
+    left: 0;
+    background-image: url('/assets/scroll/scroll-bottom-m.png');
+  }
+
+  .oom-scroll-body {
+    padding: 3em;
+    position: relative;
+  }
+
+  .oom-scroll-left, .oom-scroll-right {
+    width: 2em;
+    height: 100%;
+    position: absolute;
+    /* background-color: purple; */
+    top: 0;
+  }
+
+  .oom-scroll-left {
+    background-image: url('/assets/scroll/scroll-body-l.png');
+    left: -5px;
+  }
+
+  .oom-scroll-right {
+    background-image: url('/assets/scroll/scroll-body-r.png');
+    
+    right: -5px;
+  }
+
+  .oom-scroll .scroll-end {
+    width: 45px;
+    height: 100%;
+    position: absolute;
+    top: 0
+  }
+
+  .oom-scroll .scroll-end-left {
+    
+  }
+
+  .oom-scroll .scroll-end-right {
+    right: 0;
+  }
+
+  .oom-scroll-top {
+    background-image: url('/assets/scroll/scroll-top-m.png');
+    box-shadow: 0 1px 20px 0 black;
+    z-index: 10;
+  }
+
+  .oom-scroll-top .scroll-end-left {
+    /* background-color: red; */
+    background-image: url('/assets/scroll/scroll-top-l.png');
+    left: -24px;
+  }
+
+  .oom-scroll-top .scroll-end-right {
+    /* background-color: pink; */
+    background-image: url('/assets/scroll/scroll-top-r.png');
+    right: -24px;
+  }
+
+  .oom-scroll-bottom .scroll-end-left {
+    left: -26px;
+    background-image: url('/assets/scroll/scroll-bottom-l.png');
+  }
+
+  .oom-scroll-bottom .scroll-end-right {
+    background-image: url('/assets/scroll/scroll-bottom-r.png');
+    right: -18px;
+    width: 43px;
+  }
+
+  .oom-logo.wax {
+    /* width: 337px; */
+    /* height: 337px; */
+    background-image: url('/assets/scroll/oom-logo-wax.png');
+    background-size: 100%;
+    
+    width: 9em;
+    height: 9em;
+    position: absolute;
+    right: 9%;
+    top: -1.5em;
+    /* background: black; */
+    z-index: 8;
+  }
+
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000000000000;
+    overflow: scroll;
+  }
   /* h3 {
     border-bottom: 2px solid #2196f3;
   } */

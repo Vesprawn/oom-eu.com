@@ -27,6 +27,7 @@ import { LoginComponent } from './login/login.component';
 import { MaterializeModule } from "angular2-materialize";
 import { ArmoryHelpComponent } from './armory-help/armory-help.component';
 import { RulesAndGuidelinesComponent } from './rules-and-guidelines/rules-and-guidelines.component';
+import { NaboutComponent } from './nabout/nabout.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { RulesAndGuidelinesComponent } from './rules-and-guidelines/rules-and-gu
     GuildApplicationComponent,
     LoginComponent,
     ArmoryHelpComponent,
-    RulesAndGuidelinesComponent
+    RulesAndGuidelinesComponent,
+    NaboutComponent
   ],
   imports: [
     BrowserModule,
