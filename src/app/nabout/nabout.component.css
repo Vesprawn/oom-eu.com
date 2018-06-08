@@ -1,0 +1,12 @@
+.about-image {
+  background-image: url(/assets/backgrounds/antroushc.jpg);
+  background-size: 100%;
+  width: 70%;
+  height: 20em;
+  filter: sepia(1);
+  cursor: pointer;
+}
+
+.about-image:hover {
+  filter: sepia(0);
+}
